@@ -7,10 +7,11 @@ class LogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.08,
-      decoration: BoxDecoration(
-        color: Colors.red,
+      child: Image.asset(
+        'assets/logo.png',
+        width: 75,
+        height: 75,
       ),
-      child: Text('Insert logo'),
     );
   }
 }

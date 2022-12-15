@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
 
-class HeaderBanner extends StatelessWidget {
+class HeaderBanner extends StatefulWidget {
   const HeaderBanner({Key? key}) : super(key: key);
+
+  @override
+  State<HeaderBanner> createState() => _HeaderBannerState();
+}
+
+class _HeaderBannerState extends State<HeaderBanner> {
+  bool activeItem = false;
+
+  void activateItem(PointerEvent data) {
+    setState(() {
+      activeItem = true;
+    });
+  }
+
+  void deactivateItem(PointerEvent data) {
+    setState(() {
+      activeItem = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,24 +37,27 @@ class HeaderBanner extends StatelessWidget {
           Text(
               'Place your orders by December 15 to get them delivered in time for the holidays.'),
           Container(
-              padding: const EdgeInsets.only(top: 5, left: 10),
+            padding: const EdgeInsets.only(top: 5, left: 10),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              onHover: activateItem,
+              onExit: deactivateItem,
               child: Text(
                 "Learn More",
                 style: TextStyle(
-                  shadows: [Shadow(color: Colors.black, offset: Offset(0, -2))],
+                  shadows: [
+                    Shadow(
+                        color: activeItem ? (Colors.grey[700])! : Colors.black,
+                        offset: Offset(0, -2))
+                  ],
                   color: Colors.transparent,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.black,
                   decorationThickness: 1,
-                  // decorationStyle: TextDecorationStyle.,
                 ),
-              )
-              // Text('Learn More',
-              //     style: TextStyle(
-              //       // fontSize: 50,
-              //       decoration: TextDecoration.underline, // <-- SEE HERE
-              //     )),
               ),
+            ),
+          ),
         ],
       ),
     );

@@ -58,11 +58,16 @@ class _AccountDetailsAndCartWidgetState
                     margin: const EdgeInsets.only(right: 5),
                     child: Icon(Icons.person),
                   ),
-                  Text('Hi User,',
+                  Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    child: Text(
+                      'Hi User,',
                       style: TextStyle(
                           fontWeight: accountDetailOnHover
                               ? FontWeight.bold
-                              : FontWeight.normal)),
+                              : FontWeight.normal),
+                    ),
+                  ),
                   Container(
                     margin: const EdgeInsets.only(right: 10),
                     child: Text('My Account',

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'customer_service_item-widget.dart';
+
 class CustomerServiceWidget extends StatefulWidget {
   const CustomerServiceWidget({Key? key}) : super(key: key);
 
@@ -17,42 +19,10 @@ class CustomerServiceWidget extends StatefulWidget {
 }
 
 class _CustomerServiceWidgetState extends State<CustomerServiceWidget> {
-  bool activeItem = false;
-
-  void activateItem(PointerEvent data) {
-    print(data);
-    setState(() {
-      activeItem = true;
-    });
-  }
-
-  void deactivateItem(PointerEvent data) {
-    setState(() {
-      activeItem = false;
-    });
-  }
-
   List<Widget> _buildMenuItems(List<String> menuItems) {
     List<Widget> menuItemsList = [];
     for (int i = 0; i < menuItems.length; i++) {
-      menuItemsList.add(MouseRegion(
-          cursor: SystemMouseCursors.click,
-          onHover: activateItem,
-          onExit: deactivateItem,
-          child: Container(
-            // decoration: BoxDecoration(
-            //   border: Border(
-            //       bottom: BorderSide(
-            // width: 5,
-            // color: Colors.orange,
-            // ))),
-            child: Text(
-              menuItems[i],
-              // style: TextStyle(
-              //   fontWeight: activeItem ? FontWeight.bold : FontWeight.normal,
-              // ),
-            ),
-          )));
+      menuItemsList.add(CustomerServiceItem(menuItemName: menuItems[i]));
     }
     return menuItemsList;
   }

@@ -26,7 +26,7 @@ class _HeaderState extends State<Header> {
             ),
           ),
           padding:
-              const EdgeInsets.only(top: 15, right: 10, left: 10, bottom: 20),
+              const EdgeInsets.only(top: 15, right: 10, left: 10, bottom: 0),
           child: Column(children: <Widget>[
             Row(
               children: <Widget>[
