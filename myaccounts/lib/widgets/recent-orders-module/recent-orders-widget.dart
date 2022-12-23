@@ -43,7 +43,7 @@ class _RecentOrdersState extends State<RecentOrders> {
                   margin: const EdgeInsets.only(bottom: 15),
                   child: Text(
                     'Recent Orders',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text('You have not placed any orders yet.'),

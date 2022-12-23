@@ -23,7 +23,7 @@ class BuyAgain extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 15),
                   child: Text(
                     'Buy Again',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(

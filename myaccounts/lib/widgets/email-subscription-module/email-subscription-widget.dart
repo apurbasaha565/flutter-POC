@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class EmailSubscription extends StatefulWidget {
@@ -8,6 +9,20 @@ class EmailSubscription extends StatefulWidget {
 }
 
 class _EmailSubscriptionState extends State<EmailSubscription> {
+  bool buttonOnHover = false;
+
+  void onButtonHover(PointerEnterEvent data) {
+    setState(() {
+      buttonOnHover = true;
+    });
+  }
+
+  void onButtonLeave(PointerExitEvent data) {
+    setState(() {
+      buttonOnHover = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +58,29 @@ class _EmailSubscriptionState extends State<EmailSubscription> {
             ),
           ),
           Container(
-            child: Text('insert button here'),
+            width: 240.0,
+            height: 48.0,
+            child: MouseRegion(
+              onEnter: onButtonHover,
+              onExit: onButtonLeave,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor:
+                      buttonOnHover ? Colors.orange[800] : Colors.orange[900],
+                  side: BorderSide(
+                    color: (Colors.orange[900])!,
+                    width: 1.0,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+                child: Text('Subscribe',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    )),
+                onPressed: () {},
+              ),
+            ),
           ),
         ],
       ),
