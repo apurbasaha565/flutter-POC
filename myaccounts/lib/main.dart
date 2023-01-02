@@ -24,21 +24,22 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Header(),
-          BreadCrumb(),
-          TitleWidget(), //need to convert this to stateful widget to accept user input
-          RecentOrders(),
-          BuyAgain(),
-          FeatureTileList(),
-          EmailSubscription(),
-          NeedHelp(),
-          MoreInfo(),
-        ],
-      )),
-    ));
+          body: SingleChildScrollView(
+              child: Column(
+            children: [
+              // Header(),
+              BreadCrumb(),
+              TitleWidget(), //need to convert this to stateful widget to accept user input
+              RecentOrders(),
+              BuyAgain(),
+              FeatureTileList(),
+              EmailSubscription(),
+              // NeedHelp(),
+              // MoreInfo(),
+            ],
+          )),
+        ));
   }
 }
