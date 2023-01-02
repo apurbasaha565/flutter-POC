@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp> {
               RecentOrders(),
               BuyAgain(),
               FeatureTileList(),
-              EmailSubscription(),
+              // EmailSubscription(),
               // NeedHelp(),
               // MoreInfo(),
             ],
